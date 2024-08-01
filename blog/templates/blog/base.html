@@ -1,23 +1,21 @@
-{% extends 'blog/base.html' %} {% load static %}
 <!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
     <title>Static App</title>
-    <!-- 1 -->
+    {% load static %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'blog/normalize.css' %}"
     />
-    <!-- 2 -->
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'blog/style.css' %}"
     />
-    <!-- 3 -->
   </head>
+
   <body>
     <header>
       <ul>
@@ -26,20 +24,12 @@
       </ul>
     </header>
     {% block content_block %}
-    <div class="main">
-      {% for blog in data %}
-      <h1>{{ blog.title }}</h1>
-      <h2>{{ blog.content }}</h2>
-      <a href="{% url 'detail' blog.id %}">Detail</a>
-      <a href="{% url 'edit' blog.id %}">Edit</a>
-      <a href="{% url 'delete' blog.id %}">Delete</a>
-
-      {% endfor %}
-    </div>
-    {% include 'blog/parts/contact_form.html' %} {% endblock %}
+    <!-- de aquí -->
+    {% endblock %}
+    <!-- Hasta aquí -->
     <footer>
-      <p>運営会社 DIVE INTO COsDE 株式会社</p>
-      <p>© 2022-2023 DIVE INTO CODE Corp.</p>
+      <p>Operador Daibic Ltd.</p>
+      <p>© 2022-2023 DIVIC Corp.</p>
     </footer>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
